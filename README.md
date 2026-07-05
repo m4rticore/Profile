@@ -1,48 +1,84 @@
-# Profile
-Занимаюсь разработкой систем компьютерного зрения, используя в работе как стандартные методы (OpenCV), так и искусственный интелект (YOLO, U-Net).
-Имею большой опыт работы с Nvidia Jetson (Nano, Xavier, Orin).
+# Computer Vision Engineer
 
-# Определение внешних дефектов МИС
-Входные данные: Изображения схем с микроскопа в разрешении 2к.
+Computer Vision Engineer focused on industrial AI systems for real-world applications in manufacturing and process monitoring.
 
-С помощью OpenCV делаем первоначальную обработку, выравниваем цвет, убираем шумы. Далее с использованием YOLOv11 выделяем ROI, а именно элементы на схеме, тем самым убираем нагрузку с обработки изображений больших размеров (2к), а так же добавляем возможность локализировать дефекты по месту их обнаружения. Следующим шагом, опять же с помощью YOLOv11 обнаруживаем дефекты. Заносим итоговый результат в таблицу.
+Specialized in designing and deploying real-time computer vision pipelines using classical CV (OpenCV) and deep learning models (YOLO, U-Net), with emphasis on edge deployment and performance optimization.
 
-Исходный датасет: 1500 изображений (2500 после аугментации)
+Experienced in NVIDIA Jetson platforms (Nano, Xavier, Orin) and industrial camera systems (GigE Vision).
 
-С данным проектом был выигран грант "Студенческий стартап".
+## 🧠 Core Expertise
+
+- Industrial Computer Vision Systems
+- Real-time Video Processing Pipelines
+- Object Detection & Segmentation (YOLO, U-Net)
+- Edge AI Deployment (NVIDIA Jetson)
+- Camera Calibration & Measurement Systems
+- Image Processing (OpenCV)
+
+## 🚀 Selected Projects
+
+### Microchip Defect Detection (AOI System)
+
+Automated optical inspection system for detecting microchip defects in high-resolution (2K) microscope images.
+
+- Designed a two-stage YOLOv11 pipeline (ROI extraction + defect detection)
+- Implemented OpenCV preprocessing for noise reduction and normalization
+- Reduced computational load via ROI-based inference strategy
+- Annotated and augmented dataset (1,500 → 2,500 images) using CVAT
+- Exported results to structured CSV reports for industrial analysis
+- Awarded the “Student Startup” grant
 
 ![ROI](defect.jpg)
 ![defect1](defect2.jpg)
 ![defect2](defect3.jpg)
 
-# Гранулометрия
-Входные данные: Видеопоток конвейера с гранулами, размером около 5 мм, необходимо определять количество и размер проходящих гранул.
+### Fusarium Detection in Wheat (Spectral Analysis)
 
-Над конвейером поставлен свет и GigE-камера под углом 90 градусов. Данные с камер обрабатываются YOLO, выводится график в реальном времени. В случае выхода за нормы подаются визуальный и аудио сигналы. Данные также фиксируются в таблицу.
-Был проведен экспорт модели в ONNX для увеличения производительности системы. 
+Computer vision system for detecting Fusarium infection in wheat using spectral image analysis.
 
-Исходный датасет: 50 изображений (80 после аугментации)
-
-![granulometry](gran.jpg)
-
-# Уровенемер
-Входные данные: Видеопоток на шкалу бака с кипящей жидкостью. Необходимо в реальном времени определять уровень кипящего слоя.
-
-Используя OpenCV выполняется обработка входных данных, убираем шумы, переводим цветовое пространство в черно-белый. Кипящий слой становится отличим от фона. ставим маркер на верхнюю границу кипящего слоя и отслеживаем его местоположение на шкале. В случае выхода за допустимые границы подаем визуальные и звуковые сигналы оператору.
-Данный проект был объединен в полноценную систему с другими нашими разработанными проектами, которые выполнены похожим образом, а именно определение заполненности конвейера и определение уровня сыпучего вещества. Таким образом оператору не нужно переключаться между объектами наблюдения, все находится в одном приложении на одном экране.
-
-![urovnemer](urovnemer.jpg)
-
-# Обнаружение болезни пшеницы
-Входные данные: Изображения заболевших и здоровых растений. Необходимо определять наличие фузариоза.
-
-Преобразуем изображения, полученные с камер или других устройств, в цветовое пространство HSV, что позволяет выявить спектральные характеристики и длину волны света, присутствующего в изображении. 
-Был разработан алгоритм точного преобразования из RGB в HSV-пространство, где параметр H (Hue) будет напрямую связан с длиной волны света. Создана математическая модель для корреляции значения оттенка в HSV с длиной волны в диапазоне 380–740 нм, учитывая параметры яркости и насыщенности.
-
-С данным проектом был выигран грант от ГОАУ «Новгородский центр развития инноваций и промышленности»
+- Developed RGB-to-HSV transformation for spectral feature extraction
+- Built mathematical model mapping HSV Hue to wavelength (380–740 nm)
+- Analyzed spectral differences between healthy and infected plants
+- Designed wavelength-based disease detection approach
+- Awarded research grant by Novgorod Innovation Development Center
 
 ![fuzarioz](bolezni_pshenizi.png)
 
-# Контакты
-В случае заинтересованности буду рад ответить!
-rysevlad@gmail.com
+### Granulometry Monitoring System
+
+Real-time industrial system for detecting, counting, and measuring granules (~5 mm) on a production conveyor.
+
+- YOLO-based detection pipeline for real-time inference
+- Estimated real-world object size using camera calibration and projection geometry
+- Integrated GigE Vision industrial camera system
+- Exported model to ONNX for optimized inference performance
+- Implemented real-time alert system (visual + audio signals)
+- Logged measurements into structured reporting system
+
+![granulometry](gran.jpg)
+
+### Boiling Layer Level Monitoring System
+
+Real-time computer vision system for monitoring boiling layer level in industrial tanks.
+
+- OpenCV-based pipeline for boundary detection in noisy environments
+- Extracted upper boundary position in real time from video stream
+- Converted pixel coordinates to real-world measurements using calibration
+- Implemented threshold-based anomaly detection system
+- Integrated into unified multi-system industrial monitoring interface
+
+![urovnemer](urovnemer.jpg)
+
+## ⚙️ Technologies
+
+**Programming:** Python, C, C++  
+**Computer Vision:** OpenCV, YOLO, U-Net  
+**Deep Learning:** PyTorch  
+**Deployment:** NVIDIA Jetson (Nano / Xavier / Orin), ONNX  
+**Tools:** CVAT, Git, Linux, GigE Vision
+
+---
+
+## 📫 Contact
+
+Email: rysevlad@gmail.com
