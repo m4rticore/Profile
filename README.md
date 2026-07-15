@@ -87,7 +87,7 @@ Real-time computer vision system for monitoring boiling layer level in industria
 ## ⚙️ Technologies
 
 **Programming:** Python, C, C++  
-**Computer Vision:** OpenCV, YOLO, U-Net  
+**Computer Vision:** OpenCV, YOLO, U-Net, CLIP  
 **Deep Learning:** PyTorch  
 **Deployment:** NVIDIA Jetson (Nano / Xavier / Orin), ONNX  
 **Tools:** CVAT, Git, Linux, GigE Vision
