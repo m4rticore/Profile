@@ -32,6 +32,20 @@ Automated optical inspection system for detecting microchip defects in high-reso
 ![defect1](defect2.jpg)
 ![defect2](defect3.jpg)
 
+### Handwritten Manuscript Attribution & Dating
+
+Tool for attributing, localizing, and dating 18th-century handwritten manuscripts from Russian theological school archives, aimed at supporting historians in identifying undocumented materials.
+
+Designed a YOLOv11 pipeline to segment manuscripts into word-level fragments
+Used CLIP (ViT-B-32) embeddings to represent each fragment and compare it against a database of manuscripts with known provenance via similarity search
+Returned similarity scores to estimate likely origin, time period, and author of unidentified manuscripts
+Comparable in spirit to Russia's "Digital Peter" handwriting recognition project, using a retrieval-based approach rather than direct transcription
+Project was not brought to completion, as the lab conducting the research was shut down
+
+![Handwritten](write1.jpg)
+![Handwritten](write2.jpg)
+![Handwritten](write3.jpg)
+
 ### Fusarium Detection in Wheat (Spectral Analysis)
 
 Computer vision system for detecting Fusarium infection in wheat using spectral image analysis.
