@@ -56,6 +56,7 @@ Real-time industrial system for detecting, counting, and measuring granules (~5 
 - Logged measurements into structured reporting system
 
 ![granulometry](gran.jpg)
+![granulometry](gran1.jpg)
 
 ### Boiling Layer Level Monitoring System
 
